@@ -52,6 +52,27 @@ You can also drag the pet to reposition it. See the [official Pets documentation
 
 This release targets the **desktop v2 pet format**. It is not packaged for the separate web pet upload format. Custom desktop pets are installed locally; each recipient installs their own copy.
 
+## Optional assistant guidance
+
+The pet is artwork. Selecting it does **not** enable tools, load instructions, or start an autonomous agent. For tool-aware assistance, use the separate guidance in this repository:
+
+- [Assistant prompt](prompts/assistant.md): paste into a tool-enabled chat.
+- [Creation prompt](prompts/create-rupet.md): create or repair ruPet using the installed `hatch-pet` and `imagegen` skills.
+- [ruPet skill](skills/rupet/SKILL.md): companion behavior plus optional Ruflo routing and creation guidance.
+
+To install the optional skill, download or clone this repository and copy the **entire `skills/rupet` folder**, including its `references` and `agents` subfolders, to your local skills directory:
+
+| Platform | Skill folder |
+| --- | --- |
+| Windows | `%USERPROFILE%\.codex\skills\rupet\` |
+| macOS | `~/.codex/skills/rupet/` |
+
+Use `<CODEX_HOME>/skills/rupet/` if configured. Keep any existing custom skill backed up before replacing it. Reload skills or restart the app, then invoke `$rupet` in a chat. The pet ZIP is unchanged and does not install this optional skill.
+
+The guidance discovers available tools rather than assuming a particular server. It uses Ruflo memory for relevant lessons, routing for useful delegation, and persistent tracking only when needed. Native tools handle ordinary file work. Missing optional Ruflo tools do not block the pet or ordinary assistance.
+
+See [tool selection and memory](skills/rupet/references/tool-routing.md) and [creation and repair workflow](skills/rupet/references/creation-workflow.md). Advanced AgentDB, RuVector, RVF, and other services are used only when the task actually calls for them; the prompt does not install or activate services automatically.
+
 ## Animations
 
 | State | Frames | Behavior |

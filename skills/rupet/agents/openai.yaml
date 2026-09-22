@@ -1,0 +1,4 @@
+interface:
+  display_name: "ruPet"
+  short_description: "Tool-aware companion and pet creation guidance"
+  default_prompt: "Use $rupet to help with this task using the available ruvnet tools."
